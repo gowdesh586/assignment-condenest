@@ -5,12 +5,12 @@
 - cd server && npm install && npm run start
 
 
-**Open Browser - **
+** Open Browser - **
 
 clinet URL - http://locahost:1234/
 Server URL - http://localhost:3000/
 
-**Run test**
+** Run test **
 
 cd server && npm run test
 
