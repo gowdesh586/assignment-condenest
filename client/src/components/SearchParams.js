@@ -10,7 +10,11 @@ const SearchParams = () => {
   useEffect( () => {
       async function news(){
           const response = await axios.get(`${serverUrl}/top-head-lines`);
-          setArticles(response.data.articles);
+          if(response.data.articles){
+              setArticles(response.data.articles);
+          }else{
+              console.log("There is token expiry");
+          }
       }
       news();
   },[]);
@@ -19,7 +23,12 @@ const SearchParams = () => {
   async function requestNews() {
       const phraseEncode = encodeURI(phrase);
        const response = await axios.get(`${serverUrl}/top-head-lines?q=${phraseEncode}&country=gb`);
-      setArticles(response.data.articles);
+       if(response.data.articles){
+           setArticles(response.data.articles);
+       }
+       else{
+           console.log("There is token expiry")
+       }
   }
 
   return (

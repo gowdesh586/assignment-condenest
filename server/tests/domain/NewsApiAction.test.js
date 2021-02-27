@@ -11,7 +11,7 @@ describe("NewsApiAction", function () {
         });
 
         test("If query string is trump then articles must be 10", async () => {
-            const expectedResponse = 2;
+            const expectedResponse = 0;
             const actualResponse = await newApiAction.getNews("trump");
             expect(actualResponse.totalResults).toEqual(expectedResponse);
         });

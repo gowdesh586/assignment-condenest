@@ -2,6 +2,7 @@ const NewsAPI = require("newsapi");
 const newsApi = new NewsAPI(process.env.NEWS_API_KEY);
 
 async function getNews(q="", country="gb", category="politics", language="en") {
+    console.log(q,country);
     try{
         return await newsApi.v2.topHeadlines({
             q,
@@ -9,7 +10,7 @@ async function getNews(q="", country="gb", category="politics", language="en") {
             language,
             country
         });
-    }catch {
+    }catch{
         throw Error("News API is down");
     }
 }
