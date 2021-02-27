@@ -2,7 +2,8 @@ const newsAction = require("../domain/NewsApiAction");
 
 async function getNews(req, res) {
     try {
-        const news = await newsAction.getNews();
+        const {q, country} = req.query;
+        const news = await newsAction.getNews(q,country);
         return res.json(news);
     } catch (error) {
         return res.json(error);

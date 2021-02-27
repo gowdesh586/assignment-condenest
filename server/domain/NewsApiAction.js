@@ -1,7 +1,7 @@
 const NewsAPI = require("newsapi");
 const newsApi = new NewsAPI(process.env.NEWS_API_KEY);
 
-async function getNews(q="trump", category="politics", language="en", country="us") {
+async function getNews(q="", country="gb", category="politics", language="en") {
     try{
         return await newsApi.v2.topHeadlines({
             q,

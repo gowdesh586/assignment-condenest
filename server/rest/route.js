@@ -2,11 +2,11 @@ const { Router } = require("express");
 const newsController = require("./newsController");
 const api = Router();
 
-api.get("/everything", function(req, res) {
+api.get("/top-head-lines", function(req, res) {
     newsController.getNews(req, res);
 });
 
-api.get("/top-head-lines", function(req, res) {
+api.get("/everything", function(req, res) {
     newsController.getNewsByTopHeadLines(req, res);
 });
 
